@@ -42,6 +42,10 @@ export const ProjectEdit: FC<EduEditProps> = ({ data }) => {
         updateSingleProject({ ...project, imageUrl });
     };
 
+    const handleLinkToGithubChange = (project: OrderedProject, linkToGithub: string) => {
+        updateSingleProject({ ...project, linkToGithub });
+    };
+
     const handleDescriptionChange = (project: OrderedProject, description: string) => {
         updateSingleProject({ ...project, description });
     };
@@ -83,6 +87,16 @@ export const ProjectEdit: FC<EduEditProps> = ({ data }) => {
                                         fullWidth
                                         onChange={(e) => 
                                             handleImageUrlChange(project, e.target.value)}
+                                    />
+                                </Grid>
+                                <Grid width={'100%'} marginTop={'2%'}>
+                                    <TextField
+                                        label="link to github"
+                                        variant="outlined"
+                                        value={project.linkToGithub}
+                                        fullWidth
+                                        onChange={(e) => 
+                                            handleLinkToGithubChange(project, e.target.value)}
                                     />
                                 </Grid>
                                 <Grid width={'100%'} marginTop={'2%'}>
