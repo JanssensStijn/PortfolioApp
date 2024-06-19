@@ -1,0 +1,11 @@
+:root {
+    --headerColor: #333333;
+    --sideBarColor: white;
+    --accentColor: #82FFCE;
+    --mainBackgroundColor: #4C4C4C;
+    --mainTextColor: white;
+    --secondTextColor: black;
+    --componentBackgroundColor: white;
+    --drawerBackColor: black;
+    --drawerColor: white;
+}
