@@ -1,7 +1,7 @@
 {
     "name": "Portfolio Stijn Janssens",
     "short_name": "PSJ",
-    "start_url": "/",
+    "start_url": ".",
     "display": "standalone",
     "background_color": "#4C4C4C",
     "theme_color": "#4C4C4C",
