@@ -117,8 +117,9 @@ export const SharedMenu = () => {
       <AppBar position="fixed" open={open}>
         <Toolbar >
             <IconButton
+                id="menuButton"
                 color="inherit"
-                aria-label="open drawer"
+                aria-label="open main drawer"
                 onClick={handleDrawerOpen}
                 edge="start"
                 sx={{
@@ -126,7 +127,7 @@ export const SharedMenu = () => {
                 ...(open && { display: "none" }),
                 }}
             >
-                <MenuIcon aria-label="foldout left drawer"/>
+                <MenuIcon aria-label="foldout main drawer"/>
             </IconButton>
             <LogoImg src={logo} alt="Logo" />
             <Typography 
