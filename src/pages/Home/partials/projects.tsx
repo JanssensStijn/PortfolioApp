@@ -17,7 +17,7 @@ export const Projects: FC<ProjectsProps> = ({projects}) => {
                             <Zoom in style={{ transitionDelay: `500ms`}}>
                                 <Paper elevation={8} sx={{backgroundColor: 'var(--headerColor)'}}>
                                     <Box display="flex" flexDirection="column" alignItems="center" padding={"20px"}>
-                                        <img style={{maxWidth: "90%", maxHeight:"250px", marginTop: "5%"}} src={project.imageUrl}></img>
+                                        <img style={{maxWidth: "90%", maxHeight:"250px", marginTop: "5%"}} src={project.imageUrl} alt={project.title}></img>
                                         <Typography variant="h5" textAlign={"center"} sx={{color: 'var(--mainTextColor)', marginTop: "10px"}}>{project.title}</Typography>
                                         <Typography variant="body1" textAlign={"center"} sx={{color: 'var(--mainTextColor)'}}>{project.description}</Typography>
                                     </Box>

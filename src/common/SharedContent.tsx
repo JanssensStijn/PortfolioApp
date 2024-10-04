@@ -126,7 +126,7 @@ export const SharedMenu = () => {
                 ...(open && { display: "none" }),
                 }}
             >
-                <MenuIcon />
+                <MenuIcon aria-label="foldout left drawer"/>
             </IconButton>
             <LogoImg src={logo} alt="Logo" />
             <Typography 
@@ -203,7 +203,6 @@ export const SharedMenu = () => {
         </List>
         <Divider />
         <List sx={{ marginTop: "auto" }}>
-            <Divider />
             {personalData?.linkedin &&
              <SocialIcon label="LinkedIn" icon={<LinkedInIcon />} link={personalData.linkedin} open={open} />}
             {personalData?.github &&

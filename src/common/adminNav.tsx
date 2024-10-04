@@ -148,7 +148,7 @@ export const AdminNav = ({children}: {children: ReactNode}) => {
               ...(open && { display: 'none' }),
             }}
           >
-            <MenuIcon />
+            <MenuIcon aria-label='foldout admin drawer'/>
           </IconButton>
         </DrawerHeader>
         </Toolbar>
