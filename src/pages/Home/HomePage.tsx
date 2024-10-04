@@ -30,7 +30,7 @@ export const HomePage = () => {
                             <Typography variant="h2" sx={{ color: 'var(--mainTextColor)' }}>
                                 {personal.firstName} {personal.lastName}
                             </Typography>
-                            <Typography variant="h5" sx={{ color: 'var(--mainTextColor)', marginTop: '20px' }}>
+                            <Typography variant="h3" id="home-jobtitle" sx={{ color: 'var(--mainTextColor)', marginTop: '20px' }}>
                                 {personal.jobtitle}
                             </Typography>
                             <Typography variant="body1" sx={{ color: 'var(--mainTextColor)', marginTop: '20px', marginBottom: '20px' }}>
