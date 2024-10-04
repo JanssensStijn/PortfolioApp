@@ -199,7 +199,6 @@ export const AdminNav = ({children}: {children: ReactNode}) => {
         <Divider    />
 
         <List sx={{ marginTop: "auto" }}>
-          <Divider />
           <ListItem key="Logout" disablePadding sx={{ display: "block" }}
                     onClick={(e) => {
                     e.preventDefault();
