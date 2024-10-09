@@ -12,7 +12,7 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -57,14 +57,55 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'),
+  ({ url }) => url.origin === self.location.origin && (
+    url.pathname.endsWith('.webp') ||
+    url.pathname.endsWith('.png') ||
+    url.pathname.endsWith('.ico') || 
+    url.pathname.endsWith('.jpg') ||
+    url.pathname.endsWith('.svg')
+  ),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
-    cacheName: 'images',
+    cacheName: 'offline-local-images',
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
       // least-recently used images are removed.
+      new ExpirationPlugin({ maxEntries: 10 }),
+    ],
+  })
+);
+
+//cache from firebase
+registerRoute(
+  ({ url }) => url.origin === 'https://firebasestorage.googleapis.com' && (
+    url.pathname.endsWith('.webp') ||
+    url.pathname.endsWith('.png') ||
+    url.pathname.endsWith('.ico') || 
+    url.pathname.endsWith('.jpg') ||
+    url.pathname.endsWith('.svg')
+  ),
+  new StaleWhileRevalidate({
+    cacheName: 'offline-firebase-images',
+    plugins: [
       new ExpirationPlugin({ maxEntries: 50 }),
+    ],
+  })
+);
+
+//cache from devicons (mainly icons for skills)
+registerRoute(
+  ({ url }) => url.origin === 'https://cdn.jsdelivr.net' 
+   && (
+    url.pathname.endsWith('.webp') ||
+    url.pathname.endsWith('.png') ||
+    url.pathname.endsWith('.ico') || 
+    url.pathname.endsWith('.jpg') ||
+    url.pathname.endsWith('.svg')
+  ),
+  new StaleWhileRevalidate({
+    cacheName: 'offline-devicons',
+    plugins: [
+      new ExpirationPlugin({ maxEntries: 100 }),
     ],
   })
 );
