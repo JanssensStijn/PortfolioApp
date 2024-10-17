@@ -3,6 +3,7 @@
     "short_name": "PSJ",
     "start_url": ".",
     "display": "standalone",
+    "orientation": "landscape",
     "background_color": "#4C4C4C",
     "theme_color": "#4C4C4C",
     "icons": [
