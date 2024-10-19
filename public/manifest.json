@@ -57,5 +57,27 @@
             "form_factor": "wide",
             "label": "wide screenshot 2"
         }
-    ]
+    ],
+    "shortcuts": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "View skills",
+      "url": "/Skills"
+    },
+    {
+      "name": "View Education",
+      "url": "/Education"
+    },
+    {
+      "name": "About Me",
+      "url": "/AboutMe"
+    },
+    {
+      "name": "Contact",
+      "url": "/Contact"
+    }
+  ]
 }
