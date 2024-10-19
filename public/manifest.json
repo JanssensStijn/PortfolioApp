@@ -60,10 +60,6 @@
     ],
     "shortcuts": [
     {
-      "name": "Home",
-      "url": "/"
-    },
-    {
       "name": "View skills",
       "url": "/Skills"
     },
