@@ -32,14 +32,14 @@
     "screenshots": [
         {
             "src": "./screensmall1.png",
-            "sizes": "640x320",
+            "sizes": "320x160",
             "type": "image/png",
             "form_factor": "narrow",
             "label": "narrow screenshot 1"
         },
         {
             "src": "./screensmall2.png",
-            "sizes": "640x320",
+            "sizes": "320x160",
             "type": "image/png",
             "form_factor": "narrow",
             "label": "narrow screenshot 2"
