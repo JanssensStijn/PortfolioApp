@@ -31,15 +31,15 @@
     ],
     "screenshots": [
         {
-            "src": "./narrow1.png",
-            "sizes": "320x640",
+            "src": "./screensmall1.png",
+            "sizes": "640x320",
             "type": "image/png",
             "form_factor": "narrow",
             "label": "narrow screenshot 1"
         },
         {
-            "src": "./narrow2.png",
-            "sizes": "320x640",
+            "src": "./screensmall2.png",
+            "sizes": "640x320",
             "type": "image/png",
             "form_factor": "narrow",
             "label": "narrow screenshot 2"
