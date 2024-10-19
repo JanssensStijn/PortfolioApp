@@ -19,7 +19,7 @@ import { useUserContext } from "../providers/userProvider";
 import { usePersonalDataContext } from "../providers/personalProvider";
 import { SocialIcon } from "./partials/socialIcon";
 
-const logo = "logoSj192x192.png";
+const logo = "./img/logoSj192x192.png";
 
 const drawerWidth = 200;
 
