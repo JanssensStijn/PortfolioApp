@@ -92,9 +92,9 @@ registerRoute(
   })
 );
 
-//cache from devicons (mainly icons for skills)
+//cache from cdn's (mainly icons for skills)
 registerRoute(
-  ({ url }) => url.origin === 'https://cdn.jsdelivr.net' 
+  ({ url }) => url.origin === 'https://cdn.jsdelivr.net' || url.origin === 'https://cdn.prod.website-files.com'
    && (
     url.pathname.endsWith('.webp') ||
     url.pathname.endsWith('.png') ||
@@ -103,7 +103,7 @@ registerRoute(
     url.pathname.endsWith('.svg')
   ),
   new StaleWhileRevalidate({
-    cacheName: 'offline-devicons',
+    cacheName: 'offline-cdn-images',
     plugins: [
       new ExpirationPlugin({ maxEntries: 100 }),
     ],
