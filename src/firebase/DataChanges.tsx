@@ -77,6 +77,7 @@ export const updateProject = (projectToUpdate: Project) => {
         title: projectToUpdate.title,
         description: projectToUpdate.description,
         imageUrl: projectToUpdate.imageUrl,
+        linkToGithub: projectToUpdate.linkToGithub,
     });
 }
 
