@@ -36,6 +36,7 @@ export type Project = {
     imageUrl: string;
     order: number;  
     linkToGithub: string;
+    fileNameToDownload: string;
 }
 
 export type Projects = {

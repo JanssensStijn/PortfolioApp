@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Typography, Zoom, Paper, CircularProgress} from '@mui/material';
+import { Box, Typography, Zoom, Paper, CircularProgress, Button} from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import { Project } from "../../../firebase/DataTypes";
 
@@ -20,6 +20,18 @@ export const Projects: FC<ProjectsProps> = ({projects}) => {
                                         <img style={{maxWidth: "90%", maxHeight:"250px", marginTop: "5%"}} src={project.imageUrl} alt={project.title}></img>
                                         <Typography variant="h1" textAlign={"center"} sx={{color: 'var(--mainTextColor)', marginTop: "10px", fontSize: "2rem"}}>{project.title}</Typography>
                                         <Typography variant="body1" textAlign={"center"} sx={{color: 'var(--mainTextColor)'}}>{project.description}</Typography>
+                                        {project.fileNameToDownload && (
+                                            <Button
+                                                sx={{marginTop: "10px"}}
+                                                variant="outlined"
+                                                component="a"
+                                                href={project.fileNameToDownload}
+                                                download
+                                                onClick={(e) => e.stopPropagation()} 
+                                            >
+                                                Download {project.fileNameToDownload}
+                                            </Button>
+                                        )}
                                     </Box>
                                 </Paper>
                             </Zoom>
@@ -33,6 +45,17 @@ export const Projects: FC<ProjectsProps> = ({projects}) => {
                                         <img style={{maxWidth: "90%", maxHeight:"250px", marginTop: "5%"}} src={project.imageUrl}></img>
                                         <Typography variant="h5" textAlign={"center"} sx={{color: 'var(--mainTextColor)', marginTop: "10px"}}>{project.title}</Typography>
                                         <Typography variant="body1" textAlign={"center"} sx={{color: 'var(--mainTextColor)'}}>{project.description}</Typography>
+                                        {project.fileNameToDownload && (
+                                            <Button
+                                                sx={{marginTop: "10px"}}
+                                                variant="outlined"
+                                                component="a"
+                                                href={project.fileNameToDownload}
+                                                download
+                                            >
+                                                Download {project.fileNameToDownload}
+                                            </Button>
+                                        )}
                                     </Box>
                                 </Paper>
                             </Zoom>

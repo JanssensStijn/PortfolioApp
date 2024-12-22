@@ -78,6 +78,7 @@ export const updateProject = (projectToUpdate: Project) => {
         description: projectToUpdate.description,
         imageUrl: projectToUpdate.imageUrl,
         linkToGithub: projectToUpdate.linkToGithub,
+        fileNameToDownload: projectToUpdate.fileNameToDownload
     });
 }
 
@@ -89,5 +90,7 @@ export const addNewProject = () => {
         title: "",
         description: "",
         imageUrl: "",
+        linkToGithub: "",
+        fileNameToDownload: ""
     });
 }

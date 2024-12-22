@@ -5,13 +5,13 @@ import { Delete, Save } from "@mui/icons-material";
 import { deleteProject, updateProject } from "../../../firebase/DataChanges";
 import { Project } from "../../../firebase/DataTypes";
 
-type EduEditProps = {
+type ProjectProps = {
     data?: Project[];
 };
 
 type OrderedProject = Project & { internalOrder: number };
 
-export const ProjectEdit: FC<EduEditProps> = ({ data }) => {
+export const ProjectEdit: FC<ProjectProps> = ({ data }) => {
     const [projects, setProjects] = useState<OrderedProject[]>([]);
 
     useEffect(() => {
@@ -48,6 +48,10 @@ export const ProjectEdit: FC<EduEditProps> = ({ data }) => {
 
     const handleDescriptionChange = (project: OrderedProject, description: string) => {
         updateSingleProject({ ...project, description });
+    };
+
+    const handleFileNameToDownloadChange = (project: OrderedProject, fileNameToDownload: string) => {
+        updateSingleProject({ ...project, fileNameToDownload });
     };
 
 
@@ -107,6 +111,16 @@ export const ProjectEdit: FC<EduEditProps> = ({ data }) => {
                                         fullWidth
                                         onChange={(e) => 
                                             handleDescriptionChange(project, e.target.value)}
+                                    />
+                                </Grid>
+                                <Grid width={'100%'} marginTop={'2%'}>
+                                    <TextField
+                                        label="file name to download"
+                                        variant="outlined"
+                                        value={project.fileNameToDownload}
+                                        fullWidth
+                                        onChange={(e) => 
+                                            handleFileNameToDownloadChange(project, e.target.value)}
                                     />
                                 </Grid>
                             </Grid>
